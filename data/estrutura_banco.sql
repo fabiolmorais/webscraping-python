@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS Operadoras (
+  Registro_ANS INT PRIMARY KEY,
+  CNPJ VARCHAR(14) UNIQUE NOT NULL,
+  Razao_Social VARCHAR(255) NOT NULL,
+  Nome_Fantasia VARCHAR(255),
+  Modalidade VARCHAR(100),
+  Logradouro VARCHAR(255),
+  Numero VARCHAR(10),
+  Complemento VARCHAR(255),
+  Bairro VARCHAR(100),
+  Cidade VARCHAR(100),
+  UF CHAR(2),
+  CEP VARCHAR(8),
+  DDD VARCHAR(3),
+  Telefone VARCHAR(15),
+  Fax VARCHAR(15),
+  Endereco_eletronico VARCHAR(255),
+  Representante VARCHAR(255),
+  Cargo_Representante VARCHAR(255),
+  Regiao_de_Comercializacao INT,
+  Data_Registro_ANS DATE
+);
+
+CREATE TABLE IF NOT EXISTS Contas_Financeiras (
+  ID INT AUTO_INCREMENT PRIMARY KEY,
+  DATA DATE NOT NULL,
+  REG_ANS INT NOT NULL,
+  CD_CONTA_CONTABIL BIGINT NOT NULL,
+  DESCRICAO TEXT NOT NULL,
+  VL_SALDO_INICIAL DECIMAL(15,2) NOT NULL,
+  VL_SALDO_FINAL DECIMAL(15,2) NOT NULL,
+  FOREIGN KEY (REG_ANS) REFERENCES Operadoras(Registro_ANS)
+);
