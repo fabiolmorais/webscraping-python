@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "f9862980-c0f2-47a2-a834-697488ab6d36",
+		"name": "Teste WebScraping",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29332971"
+	},
+	"item": [
+		{
+			"name": "Operadoras",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
